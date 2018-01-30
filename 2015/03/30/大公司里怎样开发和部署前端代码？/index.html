@@ -112,12 +112,12 @@
 
 
 
-<meta name="description" content="大公司里怎样开发和部署前端代码？ 本文搬运自我在 知乎同名问题 中的答案。  这是一个非常有趣的 非主流前端领域，这个领域要探索的是如何用工程手段解决前端开发和部署优化的综合问题，入行到现在一直在学习和实践中。 在我的印象中，facebook是这个领域的鼻祖，有兴趣、有梯子的同学可以去看看facebook的页面源代码，体会一下什么叫工程化。 接下来，我想从原理展开讲述，多图，较长，希望能有耐心看完">
+<meta name="description" content="大公司里怎样开发和部署前端代码？ 本文搬运自 知乎问题 中的答案。  这是一个非常有趣的 非主流前端领域，这个领域要探索的是如何用工程手段解决前端开发和部署优化的综合问题，入行到现在一直在学习和实践中。 在我的印象中，facebook是这个领域的鼻祖，有兴趣、有梯子的同学可以去看看facebook的页面源代码，体会一下什么叫工程化。 接下来，我想从原理展开讲述，多图，较长，希望能有耐心看完。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="大公司里怎样开发和部署前端代码？">
 <meta property="og:url" content="http://yoursite.com/2015/03/30/大公司里怎样开发和部署前端代码？/index.html">
 <meta property="og:site_name" content="陈邦的博客">
-<meta property="og:description" content="大公司里怎样开发和部署前端代码？ 本文搬运自我在 知乎同名问题 中的答案。  这是一个非常有趣的 非主流前端领域，这个领域要探索的是如何用工程手段解决前端开发和部署优化的综合问题，入行到现在一直在学习和实践中。 在我的印象中，facebook是这个领域的鼻祖，有兴趣、有梯子的同学可以去看看facebook的页面源代码，体会一下什么叫工程化。 接下来，我想从原理展开讲述，多图，较长，希望能有耐心看完">
+<meta property="og:description" content="大公司里怎样开发和部署前端代码？ 本文搬运自 知乎问题 中的答案。  这是一个非常有趣的 非主流前端领域，这个领域要探索的是如何用工程手段解决前端开发和部署优化的综合问题，入行到现在一直在学习和实践中。 在我的印象中，facebook是这个领域的鼻祖，有兴趣、有梯子的同学可以去看看facebook的页面源代码，体会一下什么叫工程化。 接下来，我想从原理展开讲述，多图，较长，希望能有耐心看完。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://raw.githubusercontent.com/fouber/blog/master/assets/resource/01.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/fouber/blog/master/assets/resource/02.png">
@@ -130,10 +130,10 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/fouber/blog/master/assets/resource/10.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/fouber/blog/master/assets/resource/11.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/fouber/blog/master/assets/resource/14.png">
-<meta property="og:updated_time" content="2018-01-30T09:15:32.233Z">
+<meta property="og:updated_time" content="2018-01-30T09:22:15.109Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="大公司里怎样开发和部署前端代码？">
-<meta name="twitter:description" content="大公司里怎样开发和部署前端代码？ 本文搬运自我在 知乎同名问题 中的答案。  这是一个非常有趣的 非主流前端领域，这个领域要探索的是如何用工程手段解决前端开发和部署优化的综合问题，入行到现在一直在学习和实践中。 在我的印象中，facebook是这个领域的鼻祖，有兴趣、有梯子的同学可以去看看facebook的页面源代码，体会一下什么叫工程化。 接下来，我想从原理展开讲述，多图，较长，希望能有耐心看完">
+<meta name="twitter:description" content="大公司里怎样开发和部署前端代码？ 本文搬运自 知乎问题 中的答案。  这是一个非常有趣的 非主流前端领域，这个领域要探索的是如何用工程手段解决前端开发和部署优化的综合问题，入行到现在一直在学习和实践中。 在我的印象中，facebook是这个领域的鼻祖，有兴趣、有梯子的同学可以去看看facebook的页面源代码，体会一下什么叫工程化。 接下来，我想从原理展开讲述，多图，较长，希望能有耐心看完。">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/fouber/blog/master/assets/resource/01.png">
 
 
@@ -435,7 +435,7 @@
 
       
         <h2 id="大公司里怎样开发和部署前端代码？"><a href="#大公司里怎样开发和部署前端代码？" class="headerlink" title="大公司里怎样开发和部署前端代码？"></a>大公司里怎样开发和部署前端代码？</h2><blockquote>
-<p>本文搬运自我在 <a href="http://www.zhihu.com/question/20790576/answer/32602154" target="_blank" rel="noopener">知乎同名问题</a> 中的答案。</p>
+<p>本文搬运自 <a href="http://www.zhihu.com/question/20790576/answer/32602154" target="_blank" rel="noopener">知乎问题</a> 中的答案。</p>
 </blockquote>
 <p>这是一个非常有趣的 <code>非主流前端领域</code>，这个领域要探索的是如何用工程手段解决前端开发和部署优化的综合问题，入行到现在一直在学习和实践中。</p>
 <p>在我的印象中，facebook是这个领域的鼻祖，有兴趣、有梯子的同学可以去看看facebook的页面源代码，体会一下什么叫工程化。</p>
@@ -572,8 +572,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/05/24/前端工程与性能优化/" rel="prev" title="前端工程与性能优化">
-                前端工程与性能优化 <i class="fa fa-chevron-right"></i>
+              <a href="/2015/04/18/前端工程与模块化框架/" rel="prev" title="前端工程与模块化框架">
+                前端工程与模块化框架 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -671,7 +671,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
