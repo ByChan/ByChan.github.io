@@ -1,0 +1,1402 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Javascript," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="搞前端时间比较长的同学都会知道一个东西，那就是HTC（HTML Components），这个东西名字很现在流行的Web Components很像，但却是不同的两个东西，它们的思路有很多相似点，但是前者已是昨日黄花，后者方兴未艾，是什么造成了它们的这种差距呢？ HTML Components的一些特性因为主流浏览器里面只有IE支持过HTC，所以很多人潜意识都认为它不标准，但其实它也是有标准文档的，而">
+<meta name="keywords" content="Javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="从HTML Components的衰落看Web Components的危机">
+<meta property="og:url" content="http://yoursite.com/2016/11/15/从HTML Components的衰落看Web Components的危机/index.html">
+<meta property="og:site_name" content="陈邦的博客">
+<meta property="og:description" content="搞前端时间比较长的同学都会知道一个东西，那就是HTC（HTML Components），这个东西名字很现在流行的Web Components很像，但却是不同的两个东西，它们的思路有很多相似点，但是前者已是昨日黄花，后者方兴未艾，是什么造成了它们的这种差距呢？ HTML Components的一些特性因为主流浏览器里面只有IE支持过HTC，所以很多人潜意识都认为它不标准，但其实它也是有标准文档的，而">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-03-05T08:35:26.472Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="从HTML Components的衰落看Web Components的危机">
+<meta name="twitter:description" content="搞前端时间比较长的同学都会知道一个东西，那就是HTC（HTML Components），这个东西名字很现在流行的Web Components很像，但却是不同的两个东西，它们的思路有很多相似点，但是前者已是昨日黄花，后者方兴未艾，是什么造成了它们的这种差距呢？ HTML Components的一些特性因为主流浏览器里面只有IE支持过HTC，所以很多人潜意识都认为它不标准，但其实它也是有标准文档的，而">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"搜索...","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/11/15/从HTML Components的衰落看Web Components的危机/"/>
+
+
+
+
+
+  <title>从HTML Components的衰落看Web Components的危机 | 陈邦的博客</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-113291905-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?791cde2907f9b0c0fc2ca67cad925724";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//tajs.qq.com/stats?sId=65103563";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">陈邦的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/11/15/从HTML Components的衰落看Web Components的危机/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ByChan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/info.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="陈邦的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">从HTML Components的衰落看Web Components的危机</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-15T14:40:30+08:00">
+                2016-11-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2016/11/15/从HTML Components的衰落看Web Components的危机/" class="leancloud_visitors" data-flag-title="从HTML Components的衰落看Web Components的危机">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>搞前端时间比较长的同学都会知道一个东西，那就是HTC（HTML Components），这个东西名字很现在流行的Web Components很像，但却是不同的两个东西，它们的思路有很多相似点，但是前者已是昨日黄花，后者方兴未艾，是什么造成了它们的这种差距呢？</p>
+<h2 id="HTML-Components的一些特性"><a href="#HTML-Components的一些特性" class="headerlink" title="HTML Components的一些特性"></a>HTML Components的一些特性</h2><p>因为主流浏览器里面只有IE支持过HTC，所以很多人潜意识都认为它不标准，但其实它也是有标准文档的，而且到现在还有链接，注意它的时间！</p>
+<p><a href="http://www.w3.org/TR/NOTE-HTMLComponents" title="HTML Components" target="_blank" rel="noopener">http://www.w3.org/TR/NOTE-HTMLComponents</a></p>
+<p>我们来看看它主要能做什么呢？</p>
+<p>它可以以两种方式被引入到HTML页面中，一种是作为“行为”被附加到元素，使用CSS引入，一种是作为“组件”，扩展HTML的标签体系。</p>
+<h3 id="行为"><a href="#行为" class="headerlink" title="行为"></a>行为</h3><p>行为（Behavior）是在IE5中引入的一个概念，主要是为了做文档结构和行为的分离，把行为通过类似样式的方式隔离出去，详细介绍在这里可以看：</p>
+<p><a href="http://msdn.microsoft.com/en-us/library/ms531079(v=vs.85" target="_blank" rel="noopener">http://msdn.microsoft.com/en-us/library/ms531079(v=vs.85).aspx</a>.aspx)</p>
+<p>行为里可以引入HTC文件，刚才的HTC规范里就有，我们把它摘录出来，能看得清楚一些：</p>
+<p><em>engine.htc</em><br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">HTML</span> <span class="attr">xmlns:PUBLIC</span>=<span class="string">"urn:HTMLComponent"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">PUBLIC:EVENT</span> <span class="attr">NAME</span>=<span class="string">"onResultChange"</span> <span class="attr">ID</span>=<span class="string">"eventOnResultChange"</span> /&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">SCRIPT</span> <span class="attr">LANGUAGE</span>=<span class="string">"JScript"</span>&gt;</span><span class="undefined"></span></div><div class="line"></div><div class="line">function doCalc()</div><div class="line">&#123;</div><div class="line">   :</div><div class="line">   oEvent = createEventObject();</div><div class="line">   oEvent.result = sResult;</div><div class="line">   eventOnResultChange.fire (oEvent);</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">HTML</span> <span class="attr">xmlns:LK</span>=<span class="string">"urn:com.microsoft.htc.samples.calc"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">HEAD</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">STYLE</span>&gt;</span><span class="undefined"></span></div><div class="line">   LK\:CALC    &#123; behavior:url(engine.htc); &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">STYLE</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">HEAD</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">LK:CALC</span> <span class="attr">ID</span>=<span class="string">"myCalc"</span> <span class="attr">onResultChange</span>=<span class="string">"resultWindow.innerText=window.event.result"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">TABLE</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">TR</span>&gt;</span><span class="tag">&lt;<span class="name">DIV</span> <span class="attr">ID</span>=<span class="string">"resultWindow"</span> <span class="attr">STYLE</span>=<span class="string">"border: '.025cm solid gray'"</span> <span class="attr">ALIGN</span>=<span class="string">RIGHT</span>&gt;</span>0.<span class="tag">&lt;/<span class="name">DIV</span>&gt;</span><span class="tag">&lt;/<span class="name">TR</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">TR</span>&gt;</span><span class="tag">&lt;<span class="name">TD</span>&gt;</span><span class="tag">&lt;<span class="name">INPUT</span> <span class="attr">TYPE</span>=<span class="string">BUTTON</span> <span class="attr">VALUE</span>=<span class="string">" 7 "</span>&gt;</span><span class="tag">&lt;/<span class="name">TD</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">TD</span>&gt;</span><span class="tag">&lt;<span class="name">INPUT</span> <span class="attr">TYPE</span>=<span class="string">BUTTON</span> <span class="attr">VALUE</span>=<span class="string">" 8 "</span>&gt;</span><span class="tag">&lt;/<span class="name">TD</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">TD</span>&gt;</span><span class="tag">&lt;<span class="name">INPUT</span> <span class="attr">TYPE</span>=<span class="string">BUTTON</span> <span class="attr">VALUE</span>=<span class="string">" 9 "</span>&gt;</span><span class="tag">&lt;/<span class="name">TD</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">TD</span>&gt;</span><span class="tag">&lt;<span class="name">INPUT</span> <span class="attr">TYPE</span>=<span class="string">BUTTON</span> <span class="attr">VALUE</span>=<span class="string">" / "</span>&gt;</span><span class="tag">&lt;/<span class="name">TD</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">TD</span>&gt;</span><span class="tag">&lt;<span class="name">INPUT</span> <span class="attr">TYPE</span>=<span class="string">BUTTON</span> <span class="attr">VALUE</span>=<span class="string">" C "</span>&gt;</span><span class="tag">&lt;/<span class="name">TD</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">TR</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">TR</span>&gt;</span><span class="tag">&lt;<span class="name">TD</span>&gt;</span><span class="tag">&lt;<span class="name">INPUT</span> <span class="attr">TYPE</span>=<span class="string">BUTTON</span> <span class="attr">VALUE</span>=<span class="string">" 4 "</span>&gt;</span><span class="tag">&lt;/<span class="name">TD</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">TD</span>&gt;</span><span class="tag">&lt;<span class="name">INPUT</span> <span class="attr">TYPE</span>=<span class="string">BUTTON</span> <span class="attr">VALUE</span>=<span class="string">" 5 "</span>&gt;</span><span class="tag">&lt;/<span class="name">TD</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">TD</span>&gt;</span><span class="tag">&lt;<span class="name">INPUT</span> <span class="attr">TYPE</span>=<span class="string">BUTTON</span> <span class="attr">VALUE</span>=<span class="string">" 6 "</span>&gt;</span><span class="tag">&lt;/<span class="name">TD</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">TD</span>&gt;</span><span class="tag">&lt;<span class="name">INPUT</span> <span class="attr">TYPE</span>=<span class="string">BUTTON</span> <span class="attr">VALUE</span>=<span class="string">" * "</span>&gt;</span><span class="tag">&lt;/<span class="name">TD</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">TD</span>&gt;</span><span class="tag">&lt;<span class="name">INPUT</span> <span class="attr">TYPE</span>=<span class="string">BUTTON</span> <span class="attr">VALUE</span>=<span class="string">" % "</span> <span class="attr">DISABLED</span>&gt;</span><span class="tag">&lt;/<span class="name">TD</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">TR</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">TR</span>&gt;</span><span class="tag">&lt;<span class="name">TD</span>&gt;</span><span class="tag">&lt;<span class="name">INPUT</span> <span class="attr">TYPE</span>=<span class="string">BUTTON</span> <span class="attr">VALUE</span>=<span class="string">" 1 "</span>&gt;</span><span class="tag">&lt;/<span class="name">TD</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">TD</span>&gt;</span><span class="tag">&lt;<span class="name">INPUT</span> <span class="attr">TYPE</span>=<span class="string">BUTTON</span> <span class="attr">VALUE</span>=<span class="string">" 2 "</span>&gt;</span><span class="tag">&lt;/<span class="name">TD</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">TD</span>&gt;</span><span class="tag">&lt;<span class="name">INPUT</span> <span class="attr">TYPE</span>=<span class="string">BUTTON</span> <span class="attr">VALUE</span>=<span class="string">" 3 "</span>&gt;</span><span class="tag">&lt;/<span class="name">TD</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">TD</span>&gt;</span><span class="tag">&lt;<span class="name">INPUT</span> <span class="attr">TYPE</span>=<span class="string">BUTTON</span> <span class="attr">VALUE</span>=<span class="string">" - "</span>&gt;</span><span class="tag">&lt;/<span class="name">TD</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">TD</span>&gt;</span><span class="tag">&lt;<span class="name">INPUT</span> <span class="attr">TYPE</span>=<span class="string">BUTTON</span> <span class="attr">VALUE</span>=<span class="string">"1/x"</span> <span class="attr">DISABLED</span>&gt;</span><span class="tag">&lt;/<span class="name">TD</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">TR</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">TR</span>&gt;</span><span class="tag">&lt;<span class="name">TD</span>&gt;</span><span class="tag">&lt;<span class="name">INPUT</span> <span class="attr">TYPE</span>=<span class="string">BUTTON</span> <span class="attr">VALUE</span>=<span class="string">" 0 "</span>&gt;</span><span class="tag">&lt;/<span class="name">TD</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">TD</span>&gt;</span><span class="tag">&lt;<span class="name">INPUT</span> <span class="attr">TYPE</span>=<span class="string">BUTTON</span> <span class="attr">VALUE</span>=<span class="string">"+/-"</span>&gt;</span><span class="tag">&lt;/<span class="name">TD</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">TD</span>&gt;</span><span class="tag">&lt;<span class="name">INPUT</span> <span class="attr">TYPE</span>=<span class="string">BUTTON</span> <span class="attr">VALUE</span>=<span class="string">" . "</span>&gt;</span><span class="tag">&lt;/<span class="name">TD</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">TD</span>&gt;</span><span class="tag">&lt;<span class="name">INPUT</span> <span class="attr">TYPE</span>=<span class="string">BUTTON</span> <span class="attr">VALUE</span>=<span class="string">" + "</span>&gt;</span><span class="tag">&lt;/<span class="name">TD</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">TD</span>&gt;</span><span class="tag">&lt;<span class="name">INPUT</span> <span class="attr">TYPE</span>=<span class="string">BUTTON</span> <span class="attr">VALUE</span>=<span class="string">" = "</span>&gt;</span><span class="tag">&lt;/<span class="name">TD</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">TR</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">TABLE</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">LK:CALC</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">HTML</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>这是一个计算器的例子，我们先大致看一下代码结构，是不是很清晰？再看看现在用jQuery，我们是怎么实现这种东西的：是用选择器选择这些按钮，然后添加事件处理函数。注意你多了一步选择的过程，而且，整个过程混杂了声明式和命令式两种代码风格。如果按照它这样，你所有的JS基本都丢在了隔离的不相关的文件中，整个是一个配置的过程，分离得很干净。</p>
+<p>除了这种计算器，还有规范文档中举例的改变界面展示，或者添加动画之类，注意它们的切入点，都是相当于附加在特定选中元素上的行为，即使DOM不给JS暴露任何选择器，也毫无影响，因为它们直接就通过CSS的选择器挂到元素上了。</p>
+<p>这种在现在看来，意义不算明显，现在广为使用的先选择元素再添加事件，也是不错的展现和行为分离方式。</p>
+<p>但另外一种使用方式就不同了。</p>
+<h3 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h3><p>狭义的HTML5给我们带来了什么？是很多新增的元素标签，比如section，nav，acticle，那这些东西跟原先直接用div实现的，好处在哪里呢？在于语义化。</p>
+<p>所谓语义化，就是一个元素能清晰表达自己是干什么的，不会让人有歧义，像div那种，可以类比成是一个Object，它不具体表示什么东西，但可以当成各种东西来用。而nav一写，就知道，它是导航，它就像有class定义的一个实体类，能表达具体含义。</p>
+<p>那么，原有的HTML元素显然是不够的，因为实际开发过程中要表达的东西显然远远超出这些元素，比如日历，这种东西就没有一个元素用来描述它，更不用说在一些企业应用中可能会出现的树之类复杂控件了。</p>
+<p>不提供原生元素，对开发造成的困扰是代码写起来麻烦，具体可以看前端大神徐飞在知乎的一个回复，第三点：</p>
+<p><a href="http://www.zhihu.com/question/22426434/answer/21433867" target="_blank" rel="noopener">http://www.zhihu.com/question/22426434/answer/21433867</a></p>
+<p>所以，大家都想办法去提供自己的扩充元素的方式，现在我们是知道典型的有angularjs，polymer，但很早的时候也不是没有啊：</p>
+<p><a href="http://msdn.microsoft.com/en-us/library/ms531076(v=vs.85" target="_blank" rel="noopener">http://msdn.microsoft.com/en-us/library/ms531076(v=vs.85).aspx</a>.aspx)</p>
+<p>看，这就是HTC的添加自定义元素的方式，每个元素可以定义自己对外提供的属性、方法，还有事件，自己内部可以像写一个新页面一样，专注于实现功能。而且你发现没有，它考虑得很长远，提供了命名空间，防止你在一个页面引入两个不同组织提供的同名自定义元素。</p>
+<p>这个东西就可以称为组件了，它跟外界是完全隔离的，外界只要把它拿来就可以用，就像用原生元素一样，用选择器选择，设置属性，调用方法，添加事件处理等等，而且，注意到没有，它的属性是带get和set的，这是多么梦寐以求的东西！</p>
+<p>正是因为它这么好用，所以在那个时代，我们用它干了很多东西，封装了各种基础控件，比如树，数据表格，日期选择，等等，甚至当时也有人嫌弃浏览器原生select和radio不好看，用这么个东西，里面封装了图片来模拟功能，替换原生的来用。</p>
+<p>当时也有人，比如我在04年就想过，能不能把这些扩大化，扩展到除了基础控件之外的地方，把业务的组件也这么搞一下，一切皆组件，多好？</p>
+<p>但有些事情我直到后来很久以后才想明白，基于业务的端到端组件虽然写起来很方便，却是有致命缺陷的。</p>
+<p>到这里为止，对HTML Components的回顾告一段落，也不讨论它为什么就没了之类，这里面争议太大，我只想谈谈从这里面，能看到Web Components这么个大家寄予厚望的新标准需要面对一些什么问题。</p>
+<h2 id="Web-Components的挑战"><a href="#Web-Components的挑战" class="headerlink" title="Web Components的挑战"></a>Web Components的挑战</h2><p>以下逐条列出，挨个说明，有的已经有了，有的差一些，有的没有，不管这么多，总之谈谈我心目中的这个东西应当是怎样的。</p>
+<h3 id="自定义元素标签支持命名空间"><a href="#自定义元素标签支持命名空间" class="headerlink" title="自定义元素标签支持命名空间"></a>自定义元素标签支持命名空间</h3><p>原因我前面已经说了，可能会有不同组织实现同类功能的组件，存在于同一个页面内，引起命名歧义，所以我想了很久，还是觉得有前缀比较好：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">yours:ComponentA</span>&gt;</span><span class="tag">&lt;/<span class="name">yours:ComponentA</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">his:ComponentA</span>&gt;</span><span class="tag">&lt;/<span class="name">his:ComponentA</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>甚至，这里的前缀还可以是个简称别名，比如yours=com.aaa.productA，这可能只有复杂到一定程度才会出现，大家不要以为这太夸张，但总有一天Web体系能构建超大型软件，到那时候你就知道是不是可能了。</p>
+<h3 id="样式的局部作用域"><a href="#样式的局部作用域" class="headerlink" title="样式的局部作用域"></a>样式的局部作用域</h3><p>这个前一段时间有的浏览器实现过，在组件内部，style上加一个scoped属性，这是正确的方向。为什么要这么干呢，所谓组件，引入成本越小越好，在无约定的情况下都能引入，不造成问题，那是最佳的结果。</p>
+<p>如果你一个组件的样式不是局部的，很可能就跟主界面的冲突了，就算你不跟主界面的冲突，怎么保证不跟主界面中包含的其他组件的样式冲突？靠命名约定是不现实的，看长远一些，等你的系统够大，这就是大问题了。</p>
+<h3 id="跟主文档的通讯"><a href="#跟主文档的通讯" class="headerlink" title="跟主文档的通讯"></a>跟主文档的通讯</h3><p>一个自定义组件，应当能够跟主文档进行通讯，这个过程包括两个方向，分别可以有多种不同的方式。</p>
+<h4 id="从内向外"><a href="#从内向外" class="headerlink" title="从内向外"></a>从内向外</h4><p>除了事件，真没有什么好办法可以做这个方向的通讯，但事件也可以有两种定义方式，一种是类似onclick那种，主文档应当能够在它上面直接添加对应的事件监听函数，就像对原生元素那样，每个事件都能单独使用。另一种是像postMessage那样，只提供一个通道，具体怎么处理，自己去定义消息格式和处理方式。</p>
+<p>这两种实现方式都可行，后者比较偷懒，但也够用了，前者也没有明显优势。</p>
+<h4 id="从外向内"><a href="#从外向内" class="headerlink" title="从外向内"></a>从外向内</h4><p>这个也可以有两种方式，一种是组件对外暴露属性或者方法，让主文档调用，一种是外部也通过postMessage往里传。前者用起来会比较方便，后者也能凑合用用。</p>
+<p>所以，如果特别偷懒，这个组件就变得像一个iframe那样，跟外部基本都通过postMessage交互。</p>
+<h3 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h3><p>写到这里我是很纠结的，因为终于来到争议最大的地方了。按照很多人的思路，我这里应该也写隔离成局部作用域的JavaScript才对，但真不行，我们可以先假设组件内部的所有JavaScript都跑在局部作用域，它不能访问主文档中的对象。</p>
+<p>我这里解释一下之前那个坑，为什么端到端组件是有缺陷的。</p>
+<p>先解释什么叫端到端组件。比如说，我有这么一个组件，它封装了对后端某接口的调用，还有自身的一些展示处理，跟外界通过事件通信。它整个是不需要依赖别人的，初始加载数据都是自己内部做，别人要用它也很简单，直接拿来放在页面里就可以了。</p>
+<p>照理说，这东西应当非常好才对，使用起来这么方便，到底哪里不对？我来举个场景。</p>
+<p>在页面上同时存在这个组件的多个实例，每个组件都去加载了初始数据，假设它们是不带参数的，每个组件加载的数据都一样，这里是不是就有浪费的请求了？有人可能觉得一点点浪费不算问题，那么继续。</p>
+<p>假设这个组件就是一个很普通的下拉列表，用于选取人员的职业，初始可能有医生，教师，警察等等，我把这个组件直接放在界面上，它一出现，就自己去加载了所需的列表信息并且展示了。有另外一个配置界面，用于配置这些职业信息，这时候我在里面添加了一个护士，并且提交了。假设为了数据一致性，我们把这个变更推回到页面，麻烦就出现了。</p>
+<p>界面只有一个职业下拉列表的时候可能还好办，有多个的时候，这个更新的策略就有问题了。</p>
+<p>如果在组件的内部做这个推送的对接，就会出现要推送多份一致的数据给组件的不同实例的问题。如果把这个放在外面，那我们也有两种方式：</p>
+<ul>
+<li>订阅发布模式，组件订阅某个数据源，数据源跟服务端对接，当数据变更的时候，发给每个订阅者</li>
+<li>观察者模式，组件观察某个数据源，当数据变更的时候，去取回来</li>
+</ul>
+<p>这两种很类似，不管哪种，都面临一个问题：</p>
+<p>数据源放在哪？</p>
+<p>很明显不能放在组件内部了，只能放在某个“全局”的地方，但刚才我们假设的是，组件内部的JavaScript代码不能访问外界的对象，所以……</p>
+<p>但要是让它能访问，组件的隔离机制等于白搭。最好的方式，也许是两种都支持，默认是局部作用域，另外专门有一个作用域放给JS框架之类的东西用，但浏览器实现的难度可能就大了不少。</p>
+<p>可能有人会说，你怎么把问题搞这么复杂，用这么BT的场景来给我们美好的未来出难题。我觉得问题总是要面对的，能在做出来之前就面对问题，结果应该会好一些。</p>
+<p>我注意观察了很多朋友对Web Components的态度，大部分都是完全叫好，但其中有一部分，主要是搞前端MV*的同学对它的态度很保守，主要原因应该是我说的这几点。因为这个群体主要都在做单页型的应用，这个里面会遇到的问题是跟传统前端不同的。</p>
+<p>那么，比如Angular，或者React，它们跟Web Components的协作点在哪里呢？我个人觉得是把引擎保留下来，上层部分逐步跟Web Components融合，所以它们不是谁吃掉谁的问题，而是怎样去融合。最终就是在前端有两层，一层是数据和业务逻辑层，一层是偏UI的，在那个层里面，可以存在像Web Components那样的垂直切分，这样会很适宜。</p>
+<p>最后说说自己对Polymer的意见，我的看法没有@司徒正美 那么粗暴，但我是认同他的观点的，因为Polymer的根本理念就是在做端到端组件，它会面临很多的挑战。虽然它是一个组件化框架，组件化最适宜于解决大规模协作问题，但是如果是以走向大型单页应用这条路来看，它比Angular和React离目标的距离还远很多。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechatpay.png" alt="ByChan WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay.png" alt="ByChan Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Javascript/" rel="tag"># Javascript</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/09/05/前端MV-框架的意义/" rel="next" title="前端MV*框架的意义">
+                <i class="fa fa-chevron-left"></i> 前端MV*框架的意义
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/01/12/构建单页Web应用/" rel="prev" title="构建单页Web应用">
+                构建单页Web应用 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMzY2Ny8xMDIyMg"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/info.png"
+               alt="ByChan" />
+          <p class="site-author-name" itemprop="name">ByChan</p>
+           
+              <p class="site-description motion-element" itemprop="description">以铜为镜，可以正衣冠；以史为镜，可以知兴替；以人为镜，可以明得失</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ByChan" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://weibo.com/chenbangnews" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://rednaxelafc.github.io" target="_blank" title="作品">
+                  
+                    <i class="fa fa-fw fa-adjust"></i>
+                  
+                  作品
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML-Components的一些特性"><span class="nav-number">1.</span> <span class="nav-text">HTML Components的一些特性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#行为"><span class="nav-number">1.1.</span> <span class="nav-text">行为</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#组件"><span class="nav-number">1.2.</span> <span class="nav-text">组件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Web-Components的挑战"><span class="nav-number">2.</span> <span class="nav-text">Web Components的挑战</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义元素标签支持命名空间"><span class="nav-number">2.1.</span> <span class="nav-text">自定义元素标签支持命名空间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样式的局部作用域"><span class="nav-number">2.2.</span> <span class="nav-text">样式的局部作用域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#跟主文档的通讯"><span class="nav-number">2.3.</span> <span class="nav-text">跟主文档的通讯</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#从内向外"><span class="nav-number">2.3.1.</span> <span class="nav-text">从内向外</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#从外向内"><span class="nav-number">2.3.2.</span> <span class="nav-text">从外向内</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript"><span class="nav-number">2.4.</span> <span class="nav-text">JavaScript</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ByChan</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="//cdn.bootcss.com/jquery/2.1.3/jquery.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.bootcss.com/velocity/1.2.3/velocity.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.bootcss.com/velocity/1.2.3/velocity.ui.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/three.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (search_path.endsWith("json")) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("P1oR5aVDyMG4hiQTC3bpvlRj-gzGzoHsz", "YwcUsp1lv0PutGHkEGS0V7WB");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>

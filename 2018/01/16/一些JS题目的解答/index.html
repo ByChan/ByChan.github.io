@@ -1,0 +1,1542 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Javascript," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="在这里看到一些测试题，我HTML和CSS比较一般，尝试把里面的JS题目都解答一下： 1.&amp;quot;1&amp;quot; + 2 + &amp;quot;3&amp;quot; + 4  10 1234 37  答案：1234，加法优先级等同，从左往右，数字与字符串相加，数字转换成字符串进行运算，结果等同于：”12”+”3”+4 = “123”+4 = “1234”。">
+<meta name="keywords" content="Javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一些JS题目的解答">
+<meta property="og:url" content="http://yoursite.com/2018/01/16/一些JS题目的解答/index.html">
+<meta property="og:site_name" content="陈邦的博客">
+<meta property="og:description" content="在这里看到一些测试题，我HTML和CSS比较一般，尝试把里面的JS题目都解答一下： 1.&amp;quot;1&amp;quot; + 2 + &amp;quot;3&amp;quot; + 4  10 1234 37  答案：1234，加法优先级等同，从左往右，数字与字符串相加，数字转换成字符串进行运算，结果等同于：”12”+”3”+4 = “123”+4 = “1234”。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-03-05T08:42:11.019Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="一些JS题目的解答">
+<meta name="twitter:description" content="在这里看到一些测试题，我HTML和CSS比较一般，尝试把里面的JS题目都解答一下： 1.&amp;quot;1&amp;quot; + 2 + &amp;quot;3&amp;quot; + 4  10 1234 37  答案：1234，加法优先级等同，从左往右，数字与字符串相加，数字转换成字符串进行运算，结果等同于：”12”+”3”+4 = “123”+4 = “1234”。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"搜索...","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/01/16/一些JS题目的解答/"/>
+
+
+
+
+
+  <title>一些JS题目的解答 | 陈邦的博客</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-113291905-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?791cde2907f9b0c0fc2ca67cad925724";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//tajs.qq.com/stats?sId=65103563";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">陈邦的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/16/一些JS题目的解答/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ByChan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/info.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="陈邦的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">一些JS题目的解答</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-16T20:23:30+08:00">
+                2018-01-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/基础/" itemprop="url" rel="index">
+                    <span itemprop="name">基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/01/16/一些JS题目的解答/" class="leancloud_visitors" data-flag-title="一些JS题目的解答">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>在<a href="http://davidshariff.com/quiz/" target="_blank" rel="noopener">这里</a>看到一些测试题，我HTML和CSS比较一般，尝试把里面的JS题目都解答一下：</p>
+<h1 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h1><pre><code>&quot;1&quot; + 2 + &quot;3&quot; + 4
+</code></pre><ul>
+<li>10</li>
+<li>1234</li>
+<li>37</li>
+</ul>
+<p>答案：1234，加法优先级等同，从左往右，数字与字符串相加，数字转换成字符串进行运算，结果等同于：”12”+”3”+4 = “123”+4 = “1234”。<br><a id="more"></a></p>
+<h1 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h1><pre><code>4 + 3 + 2 + &quot;1&quot;
+</code></pre><ul>
+<li>10</li>
+<li>4321</li>
+<li>91</li>
+</ul>
+<p>答案：91，优先级同上，从左往右，等同于：7+2+”1” = 9+”1” = “91”。</p>
+<h1 id="3"><a href="#3" class="headerlink" title="3."></a>3.</h1><pre><code>var foo = 1;
+function bar() {
+    foo = 10;
+    return;
+    function foo() {}
+}
+bar();
+alert(foo);
+</code></pre><ul>
+<li>1</li>
+<li>10</li>
+<li>Function</li>
+<li>undefined</li>
+<li>Error</li>
+</ul>
+<p>答案：1，function的定义会提前到当前作用域之前，所以等同于：</p>
+<pre><code>var foo = 1;
+function bar() {
+    function foo() {}
+    foo = 10;
+    return;
+}
+bar();
+alert(foo);
+</code></pre><p>所以，在foo=10的时候，foo是有定义的，属于局部变量，影响不到外层的foo。</p>
+<p>参见：<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions_and_function_scope?redirectlocale=en-US&amp;redirectslug=JavaScript%2FReference%2FFunctions_and_function_scope" target="_blank" rel="noopener">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions_and_function_scope?redirectlocale=en-US&amp;redirectslug=JavaScript%2FReference%2FFunctions_and_function_scope</a></p>
+<blockquote>
+<p>Unlike functions defined by function expressions or by the Function constructor, a function defined by a function declaration can be used before the function declaration itself.</p>
+</blockquote>
+<h1 id="4"><a href="#4" class="headerlink" title="4."></a>4.</h1><pre><code>function bar() {
+    return foo;
+    foo = 10;
+    function foo() {}
+    var foo = 11;
+}
+alert(typeof bar());
+</code></pre><ul>
+<li>number</li>
+<li>function</li>
+<li>undefined</li>
+<li>Error</li>
+</ul>
+<p>答案：function，与上题类似，等同于：</p>
+<pre><code>function bar() {
+    function foo() {}
+    return foo;
+    foo = 10;
+    var foo = 11;
+}
+alert(typeof bar());
+</code></pre><p>在return之后声明和赋值的foo都无效，所以返回了function。</p>
+<p>参见：<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/return" target="_blank" rel="noopener">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/return</a></p>
+<blockquote>
+<p>A function immediately stops at the point where return is called.</p>
+</blockquote>
+<p>补充，这个解答有问题：</p>
+<blockquote>
+<p>@尤里卡Eureka：JS中function声明和var声明都会被提前，最终得到结果为function，是因为<em>名称解析顺序-Name Resolution Order</em>(<a href="http://t.cn/8kcIRts导致的function声明优先级大于var声明，而不是由return语句退出导致最后的结果~" target="_blank" rel="noopener">http://t.cn/8kcIRts导致的function声明优先级大于var声明，而不是由return语句退出导致最后的结果~</a></p>
+</blockquote>
+<h1 id="5"><a href="#5" class="headerlink" title="5."></a>5.</h1><pre><code>var x = 3;
+
+var foo = {
+    x: 2,
+    baz: {
+        x: 1,
+        bar: function() {
+            return this.x;
+        }
+    }
+}
+
+var go = foo.baz.bar;
+
+alert(go());
+alert(foo.baz.bar());
+</code></pre><ul>
+<li>1,2</li>
+<li>1,3</li>
+<li>2,1</li>
+<li>2,3</li>
+<li>3,1</li>
+<li>3,2</li>
+</ul>
+<p>答案：3,1<br>this指向执行时刻的作用域，go的作用域是全局，所以相当于window，取到的就是window.x，也就是var x=3;这里定义的x。而foo.baz.bar()里面，this指向foo.baz，所以取到的是这个上面的x，也就是1。</p>
+<p>参见：<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this?redirectlocale=en-US&amp;redirectslug=JavaScript%2FReference%2FOperators%2Fthis" target="_blank" rel="noopener">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this?redirectlocale=en-US&amp;redirectslug=JavaScript%2FReference%2FOperators%2Fthis</a></p>
+<h1 id="6"><a href="#6" class="headerlink" title="6."></a>6.</h1><pre><code>var x = 4,
+    obj = {
+        x: 3,
+        bar: function() {
+            var x = 2;
+            setTimeout(function() {
+                var x = 1;
+                alert(this.x);
+            }, 1000);
+        }
+    };
+obj.bar();
+</code></pre><ul>
+<li>1</li>
+<li>2</li>
+<li>3</li>
+<li>4</li>
+<li>undefined</li>
+</ul>
+<p>答案：4，不管有这个setTimeout还是把这个函数立即执行，它里面这个function都是孤立的，this只能是全局的window，即使不延时，改成立即执行结果同样是4。</p>
+<h1 id="7"><a href="#7" class="headerlink" title="7."></a>7.</h1><pre><code>x = 1;
+function bar() {
+    this.x = 2;
+    return x;
+}
+var foo = new bar();
+alert(foo.x);
+</code></pre><ul>
+<li>1</li>
+<li>2</li>
+<li>undefined</li>
+</ul>
+<p>答案：2，这里主要问题是最外面x的定义，试试把x=1改成x={}，结果会不同的。这是为什么呢？在把函数当作构造器使用的时候，如果手动返回了一个值，要看这个值是否简单类型，如果是，等同于不写返回，如果不是简单类型，得到的就是手动返回的值。如果，不手动写返回值，就会默认从原型创建一个对象用于返回。</p>
+<p>参见：<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new" target="_blank" rel="noopener">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new</a></p>
+<h1 id="8"><a href="#8" class="headerlink" title="8."></a>8.</h1><pre><code>function foo(a) {
+    alert(arguments.length);
+}
+foo(1, 2, 3);
+</code></pre><ul>
+<li>1</li>
+<li>2</li>
+<li>3</li>
+<li>undefined</li>
+</ul>
+<p>答案3，arguments取的是实参的个数，而foo.length取的是形参个数。</p>
+<p>参见：<br><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions_and_function_scope/arguments/length?redirectlocale=en-US&amp;redirectslug=JavaScript%2FReference%2FFunctions_and_function_scope%2Farguments%2Flength" target="_blank" rel="noopener">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions_and_function_scope/arguments/length?redirectlocale=en-US&amp;redirectslug=JavaScript%2FReference%2FFunctions_and_function_scope%2Farguments%2Flength</a></p>
+<blockquote>
+<p>arguments.length provides the number of arguments actually passed to a function. This can be more or less than the defined parameter count (See Function.length).</p>
+</blockquote>
+<h1 id="9"><a href="#9" class="headerlink" title="9."></a>9.</h1><pre><code>var foo = function bar() {};
+alert(typeof bar);
+</code></pre><ul>
+<li>function</li>
+<li>object</li>
+<li>undefined</li>
+</ul>
+<p>答案：undefined，这种情况下bar的名字从外部不可见，那是不是这个名字别人就没法知道了呢？不是，toString就可以看到它，比如说alert(foo)，可以看看能打出什么。</p>
+<p>参见：<br><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions_and_function_scope?redirectlocale=en-US&amp;redirectslug=JavaScript%2FReference%2FFunctions_and_function_scope" target="_blank" rel="noopener">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions_and_function_scope?redirectlocale=en-US&amp;redirectslug=JavaScript%2FReference%2FFunctions_and_function_scope</a></p>
+<blockquote>
+<p>The function name can be used only within the function’s body. Attempting to use it outside the function’s body results in an error (or undefined if the function name was previously declared via a var statement).</p>
+</blockquote>
+<h1 id="10"><a href="#10" class="headerlink" title="10."></a>10.</h1><pre><code>var arr = [];
+arr[0]  = &apos;a&apos;;
+arr[1]  = &apos;b&apos;;
+arr.foo = &apos;c&apos;;
+alert(arr.length);
+</code></pre><ul>
+<li>1</li>
+<li>2</li>
+<li>3</li>
+<li>undefined</li>
+</ul>
+<p>答案：2，数组的原型是Object，所以可以像其他类型一样附加属性，不影响其固有性质。</p>
+<h1 id="11"><a href="#11" class="headerlink" title="11."></a>11.</h1><pre><code>function foo(a) {
+    arguments[0] = 2;
+    alert(a);
+}
+foo(1);
+</code></pre><ul>
+<li>1</li>
+<li>2</li>
+<li>undefined</li>
+</ul>
+<p>答案：2，实参可以直接从arguments数组中修改。</p>
+<p>参见：<br><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions_and_function_scope/arguments?redirectlocale=en-US&amp;redirectslug=JavaScript%2FReference%2FFunctions_and_function_scope%2Farguments" target="_blank" rel="noopener">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions_and_function_scope/arguments?redirectlocale=en-US&amp;redirectslug=JavaScript%2FReference%2FFunctions_and_function_scope%2Farguments</a></p>
+<blockquote>
+<p>The arguments can also be set</p>
+</blockquote>
+<h1 id="12"><a href="#12" class="headerlink" title="12."></a>12.</h1><pre><code>function foo(){}
+delete foo.length;
+alert(typeof foo.length);
+</code></pre><ul>
+<li>number</li>
+<li>undefined</li>
+<li>object</li>
+<li>Error</li>
+</ul>
+<p>答案：number，foo.length是无法删除的，它在Function原型上，重点它的configurable是false。</p>
+<p>参见：<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/delete" target="_blank" rel="noopener">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/delete</a></p>
+<blockquote>
+<p>delete can’t remove certain properties of predefined objects (like Object, Array, Math etc). These are described in ECMAScript 5 and later as non-configurable</p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechatpay.png" alt="ByChan WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay.png" alt="ByChan Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Javascript/" rel="tag"># Javascript</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/07/14/前端组件化框架之路/" rel="next" title="前端组件化框架之路">
+                <i class="fa fa-chevron-left"></i> 前端组件化框架之路
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMzY2Ny8xMDIyMg"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/info.png"
+               alt="ByChan" />
+          <p class="site-author-name" itemprop="name">ByChan</p>
+           
+              <p class="site-description motion-element" itemprop="description">以铜为镜，可以正衣冠；以史为镜，可以知兴替；以人为镜，可以明得失</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ByChan" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://weibo.com/chenbangnews" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://rednaxelafc.github.io" target="_blank" title="作品">
+                  
+                    <i class="fa fa-fw fa-adjust"></i>
+                  
+                  作品
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1"><span class="nav-number">1.</span> <span class="nav-text">1.</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2"><span class="nav-number">2.</span> <span class="nav-text">2.</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3"><span class="nav-number">3.</span> <span class="nav-text">3.</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4"><span class="nav-number">4.</span> <span class="nav-text">4.</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5"><span class="nav-number">5.</span> <span class="nav-text">5.</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6"><span class="nav-number">6.</span> <span class="nav-text">6.</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7"><span class="nav-number">7.</span> <span class="nav-text">7.</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8"><span class="nav-number">8.</span> <span class="nav-text">8.</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9"><span class="nav-number">9.</span> <span class="nav-text">9.</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#10"><span class="nav-number">10.</span> <span class="nav-text">10.</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#11"><span class="nav-number">11.</span> <span class="nav-text">11.</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#12"><span class="nav-number">12.</span> <span class="nav-text">12.</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ByChan</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="//cdn.bootcss.com/jquery/2.1.3/jquery.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.bootcss.com/velocity/1.2.3/velocity.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.bootcss.com/velocity/1.2.3/velocity.ui.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/three.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (search_path.endsWith("json")) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("P1oR5aVDyMG4hiQTC3bpvlRj-gzGzoHsz", "YwcUsp1lv0PutGHkEGS0V7WB");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
