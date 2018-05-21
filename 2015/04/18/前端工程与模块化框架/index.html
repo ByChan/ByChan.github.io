@@ -117,7 +117,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="前端工程与模块化框架">
 <meta property="og:url" content="http://yoursite.com/2015/04/18/前端工程与模块化框架/index.html">
-<meta property="og:site_name" content="陈邦的博客">
+<meta property="og:site_name" content="河森堡的博客 - Hesenberg Blog">
 <meta property="og:description" content="前端工程与模块化框架一直酝酿着写一篇关于模块化框架的文章，因为模块化框架是前端工程中的 最为核心的部分 。本来又想长篇大论的写一篇完整且严肃的paper，但看了 @糖饼 在 div.io 的一篇文章 《再谈 SeaJS 与 RequireJS 的差异》觉得可以借着这篇继续谈一下，加上最近spm3发布，在seajs的官网上又引来了一场 口水战 ，我并不想参与到这场论战中，各有所爱的事情不好评论什么，">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2018-03-05T08:13:58.754Z">
@@ -157,7 +157,7 @@
 
 
 
-  <title>前端工程与模块化框架 | 陈邦的博客</title>
+  <title>前端工程与模块化框架 | 河森堡的博客 - Hesenberg Blog</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -221,12 +221,12 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">陈邦的博客</span>
+        <span class="site-title">河森堡的博客 - Hesenberg Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
       
-        <p class="site-subtitle"></p>
+        <h1 class="site-subtitle" itemprop="description">Chen Bang</h1>
       
   </div>
 
@@ -351,13 +351,13 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/04/18/前端工程与模块化框架/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ByChan">
-      <meta itemprop="description" content="">
+      <meta itemprop="name" content="陈邦">
+      <meta itemprop="description" content="以铜为镜，可以正衣冠；以史为镜，可以知兴替；以人为镜，可以明得失">
       <meta itemprop="image" content="/images/info.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="陈邦的博客">
+      <meta itemprop="name" content="河森堡的博客 - Hesenberg Blog">
     </span>
 
     
@@ -365,7 +365,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">前端工程与模块化框架</h1>
+          <h2 class="post-title" itemprop="name headline">前端工程与模块化框架</h2>
         
 
         <div class="post-meta">
@@ -524,13 +524,13 @@
     <div id="QR" style="display: none;">
       
         <div id="wechat" style="display: inline-block">
-          <img id="wechat_qr" src="/images/wechatpay.png" alt="ByChan WeChat Pay"/>
+          <img id="wechat_qr" src="/images/wechatpay.png" alt="陈邦 WeChat Pay"/>
           <p>微信打赏</p>
         </div>
       
       
         <div id="alipay" style="display: inline-block">
-          <img id="alipay_qr" src="/images/alipay.png" alt="ByChan Alipay"/>
+          <img id="alipay_qr" src="/images/alipay.png" alt="陈邦 Alipay"/>
           <p>支付宝打赏</p>
         </div>
       
@@ -663,11 +663,11 @@
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/info.png"
-               alt="ByChan" />
-          <p class="site-author-name" itemprop="name">ByChan</p>
+               alt="陈邦" />
+          <p class="site-author-name" itemprop="name">陈邦</p>
            
               <p class="site-description motion-element" itemprop="description">以铜为镜，可以正衣冠；以史为镜，可以知兴替；以人为镜，可以明得失</p>
-          
+           
         </div>
         <nav class="site-state motion-element">
 
@@ -787,7 +787,7 @@
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">ByChan</span>
+  <span class="author" itemprop="copyrightHolder">陈邦</span>
 </div>
 
         
@@ -1252,6 +1252,23 @@
         onPopupClose();
       }
     });
+    // 页面崩溃效果
+         var OriginTitile = document.title;
+         var titleTime;
+         document.addEventListener('visibilitychange', function () {
+             if (document.hidden) {
+                 $('[rel="shortcut icon"]').attr('href', "/favicon-error.ico");
+                 document.title = ' 页面崩溃啦  | 快回来！';
+                 clearTimeout(titleTime);
+             }
+             else {
+                  $('[rel="shortcut icon"]').attr('href', "/favicon.ico");
+                 document.title = ' 我们又见面了 ' + OriginTitile;
+                 titleTime = setTimeout(function () {
+                     document.title = OriginTitile;
+                 }, 2000);
+             }
+         })
   </script>
 
 
@@ -1368,6 +1385,21 @@
 
 
   
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
 
   
   

@@ -117,7 +117,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="一些JS题目的解答">
 <meta property="og:url" content="http://yoursite.com/2018/01/16/一些JS题目的解答/index.html">
-<meta property="og:site_name" content="陈邦的博客">
+<meta property="og:site_name" content="河森堡的博客 - Hesenberg Blog">
 <meta property="og:description" content="在这里看到一些测试题，我HTML和CSS比较一般，尝试把里面的JS题目都解答一下： 1.&amp;quot;1&amp;quot; + 2 + &amp;quot;3&amp;quot; + 4  10 1234 37  答案：1234，加法优先级等同，从左往右，数字与字符串相加，数字转换成字符串进行运算，结果等同于：”12”+”3”+4 = “123”+4 = “1234”。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2018-03-05T08:42:11.019Z">
@@ -157,7 +157,7 @@
 
 
 
-  <title>一些JS题目的解答 | 陈邦的博客</title>
+  <title>一些JS题目的解答 | 河森堡的博客 - Hesenberg Blog</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -221,12 +221,12 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">陈邦的博客</span>
+        <span class="site-title">河森堡的博客 - Hesenberg Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
       
-        <p class="site-subtitle"></p>
+        <h1 class="site-subtitle" itemprop="description">Chen Bang</h1>
       
   </div>
 
@@ -351,13 +351,13 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/16/一些JS题目的解答/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ByChan">
-      <meta itemprop="description" content="">
+      <meta itemprop="name" content="陈邦">
+      <meta itemprop="description" content="以铜为镜，可以正衣冠；以史为镜，可以知兴替；以人为镜，可以明得失">
       <meta itemprop="image" content="/images/info.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="陈邦的博客">
+      <meta itemprop="name" content="河森堡的博客 - Hesenberg Blog">
     </span>
 
     
@@ -365,7 +365,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">一些JS题目的解答</h1>
+          <h2 class="post-title" itemprop="name headline">一些JS题目的解答</h2>
         
 
         <div class="post-meta">
@@ -669,13 +669,13 @@ alert(typeof foo.length);
     <div id="QR" style="display: none;">
       
         <div id="wechat" style="display: inline-block">
-          <img id="wechat_qr" src="/images/wechatpay.png" alt="ByChan WeChat Pay"/>
+          <img id="wechat_qr" src="/images/wechatpay.png" alt="陈邦 WeChat Pay"/>
           <p>微信打赏</p>
         </div>
       
       
         <div id="alipay" style="display: inline-block">
-          <img id="alipay_qr" src="/images/alipay.png" alt="ByChan Alipay"/>
+          <img id="alipay_qr" src="/images/alipay.png" alt="陈邦 Alipay"/>
           <p>支付宝打赏</p>
         </div>
       
@@ -804,11 +804,11 @@ alert(typeof foo.length);
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/info.png"
-               alt="ByChan" />
-          <p class="site-author-name" itemprop="name">ByChan</p>
+               alt="陈邦" />
+          <p class="site-author-name" itemprop="name">陈邦</p>
            
               <p class="site-description motion-element" itemprop="description">以铜为镜，可以正衣冠；以史为镜，可以知兴替；以人为镜，可以明得失</p>
-          
+           
         </div>
         <nav class="site-state motion-element">
 
@@ -928,7 +928,7 @@ alert(typeof foo.length);
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">ByChan</span>
+  <span class="author" itemprop="copyrightHolder">陈邦</span>
 </div>
 
         
@@ -1393,6 +1393,23 @@ alert(typeof foo.length);
         onPopupClose();
       }
     });
+    // 页面崩溃效果
+         var OriginTitile = document.title;
+         var titleTime;
+         document.addEventListener('visibilitychange', function () {
+             if (document.hidden) {
+                 $('[rel="shortcut icon"]').attr('href', "/favicon-error.ico");
+                 document.title = ' 页面崩溃啦  | 快回来！';
+                 clearTimeout(titleTime);
+             }
+             else {
+                  $('[rel="shortcut icon"]').attr('href', "/favicon.ico");
+                 document.title = ' 我们又见面了 ' + OriginTitile;
+                 titleTime = setTimeout(function () {
+                     document.title = OriginTitile;
+                 }, 2000);
+             }
+         })
   </script>
 
 
@@ -1509,6 +1526,21 @@ alert(typeof foo.length);
 
 
   
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
 
   
   

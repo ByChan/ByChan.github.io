@@ -96,7 +96,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="河森堡,河森堡的博客,河森堡博客,Hesenberg,陈邦,陈邦博客,陈邦的博客,hesenberg,Bychan,bychan博客,bychan的博客,hesenberg博客,hesenberg的博客" />
 
 
 
@@ -112,17 +112,17 @@
 
 
 
-<meta name="description" content="以铜为镜，可以正衣冠；以史为镜，可以知兴替；以人为镜，可以明得失">
+<meta name="description" content="河森堡，河森堡的博客，河森堡博客，Hesenberg，陈邦，陈邦博客，陈邦的博客，hesenberg，Bychan，bychan博客，bychan的博客，hesenberg博客，hesenberg的博客">
 <meta property="og:type" content="website">
 <meta property="og:title" content="分类">
 <meta property="og:url" content="http://yoursite.com/categories/index.html">
-<meta property="og:site_name" content="陈邦的博客">
-<meta property="og:description" content="以铜为镜，可以正衣冠；以史为镜，可以知兴替；以人为镜，可以明得失">
+<meta property="og:site_name" content="河森堡的博客 - Hesenberg Blog">
+<meta property="og:description" content="河森堡，河森堡的博客，河森堡博客，Hesenberg，陈邦，陈邦博客，陈邦的博客，hesenberg，Bychan，bychan博客，bychan的博客，hesenberg博客，hesenberg的博客">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2018-01-29T08:18:19.929Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="分类">
-<meta name="twitter:description" content="以铜为镜，可以正衣冠；以史为镜，可以知兴替；以人为镜，可以明得失">
+<meta name="twitter:description" content="河森堡，河森堡的博客，河森堡博客，Hesenberg，陈邦，陈邦博客，陈邦的博客，hesenberg，Bychan，bychan博客，bychan的博客，hesenberg博客，hesenberg的博客">
 
 
 
@@ -156,7 +156,7 @@
 
 
 
-  <title>分类 | 陈邦的博客</title>
+  <title>分类 | 河森堡的博客 - Hesenberg Blog</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -220,12 +220,12 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">陈邦的博客</span>
+        <span class="site-title">河森堡的博客 - Hesenberg Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
       
-        <p class="site-subtitle"></p>
+        <h1 class="site-subtitle" itemprop="description">Chen Bang</h1>
       
   </div>
 
@@ -344,7 +344,7 @@
     <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">分类</h1>
+	<h2 class="post-title" itemprop="name headline">分类</h2>
 
 
 
@@ -405,11 +405,11 @@
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/info.png"
-               alt="ByChan" />
-          <p class="site-author-name" itemprop="name">ByChan</p>
+               alt="陈邦" />
+          <p class="site-author-name" itemprop="name">陈邦</p>
            
               <p class="site-description motion-element" itemprop="description">以铜为镜，可以正衣冠；以史为镜，可以知兴替；以人为镜，可以明得失</p>
-          
+           
         </div>
         <nav class="site-state motion-element">
 
@@ -513,7 +513,7 @@
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">ByChan</span>
+  <span class="author" itemprop="copyrightHolder">陈邦</span>
 </div>
 
         
@@ -967,6 +967,23 @@
         onPopupClose();
       }
     });
+    // 页面崩溃效果
+         var OriginTitile = document.title;
+         var titleTime;
+         document.addEventListener('visibilitychange', function () {
+             if (document.hidden) {
+                 $('[rel="shortcut icon"]').attr('href', "/favicon-error.ico");
+                 document.title = ' 页面崩溃啦  | 快回来！';
+                 clearTimeout(titleTime);
+             }
+             else {
+                  $('[rel="shortcut icon"]').attr('href', "/favicon.ico");
+                 document.title = ' 我们又见面了 ' + OriginTitile;
+                 titleTime = setTimeout(function () {
+                     document.title = OriginTitile;
+                 }, 2000);
+             }
+         })
   </script>
 
 
@@ -1083,6 +1100,21 @@
 
 
   
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
 
   
   

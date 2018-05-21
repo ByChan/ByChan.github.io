@@ -117,7 +117,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="前端组件化框架之路">
 <meta property="og:url" content="http://yoursite.com/2017/07/14/前端组件化框架之路/index.html">
-<meta property="og:site_name" content="陈邦的博客">
+<meta property="og:site_name" content="河森堡的博客 - Hesenberg Blog">
 <meta property="og:description" content="1. 为什么组件化这么难做Web应用的组件化是一个很复杂的话题。 在大型软件中，组件化是一种共识，它一方面提高了开发效率，另一方面降低了维护成本。但是在Web前端这个领域，并没有很通用的组件模式，因为缺少一个大家都能认同的实现方式，所以很多框架/库都实现了自己的组件化方式。 前端圈最热衷于造轮子了，没有哪个别的领域能出现这么混乱而欣欣向荣的景象。这一方面说明前端领域的创造力很旺盛，另一方面却说明了">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2018-03-05T08:44:47.185Z">
@@ -157,7 +157,7 @@
 
 
 
-  <title>前端组件化框架之路 | 陈邦的博客</title>
+  <title>前端组件化框架之路 | 河森堡的博客 - Hesenberg Blog</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -221,12 +221,12 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">陈邦的博客</span>
+        <span class="site-title">河森堡的博客 - Hesenberg Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
       
-        <p class="site-subtitle"></p>
+        <h1 class="site-subtitle" itemprop="description">Chen Bang</h1>
       
   </div>
 
@@ -351,13 +351,13 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/14/前端组件化框架之路/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ByChan">
-      <meta itemprop="description" content="">
+      <meta itemprop="name" content="陈邦">
+      <meta itemprop="description" content="以铜为镜，可以正衣冠；以史为镜，可以知兴替；以人为镜，可以明得失">
       <meta itemprop="image" content="/images/info.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="陈邦的博客">
+      <meta itemprop="name" content="河森堡的博客 - Hesenberg Blog">
     </span>
 
     
@@ -365,7 +365,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">前端组件化框架之路</h1>
+          <h2 class="post-title" itemprop="name headline">前端组件化框架之路</h2>
         
 
         <div class="post-meta">
@@ -720,13 +720,13 @@
     <div id="QR" style="display: none;">
       
         <div id="wechat" style="display: inline-block">
-          <img id="wechat_qr" src="/images/wechatpay.png" alt="ByChan WeChat Pay"/>
+          <img id="wechat_qr" src="/images/wechatpay.png" alt="陈邦 WeChat Pay"/>
           <p>微信打赏</p>
         </div>
       
       
         <div id="alipay" style="display: inline-block">
-          <img id="alipay_qr" src="/images/alipay.png" alt="ByChan Alipay"/>
+          <img id="alipay_qr" src="/images/alipay.png" alt="陈邦 Alipay"/>
           <p>支付宝打赏</p>
         </div>
       
@@ -859,11 +859,11 @@
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/info.png"
-               alt="ByChan" />
-          <p class="site-author-name" itemprop="name">ByChan</p>
+               alt="陈邦" />
+          <p class="site-author-name" itemprop="name">陈邦</p>
            
               <p class="site-description motion-element" itemprop="description">以铜为镜，可以正衣冠；以史为镜，可以知兴替；以人为镜，可以明得失</p>
-          
+           
         </div>
         <nav class="site-state motion-element">
 
@@ -983,7 +983,7 @@
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">ByChan</span>
+  <span class="author" itemprop="copyrightHolder">陈邦</span>
 </div>
 
         
@@ -1448,6 +1448,23 @@
         onPopupClose();
       }
     });
+    // 页面崩溃效果
+         var OriginTitile = document.title;
+         var titleTime;
+         document.addEventListener('visibilitychange', function () {
+             if (document.hidden) {
+                 $('[rel="shortcut icon"]').attr('href', "/favicon-error.ico");
+                 document.title = ' 页面崩溃啦  | 快回来！';
+                 clearTimeout(titleTime);
+             }
+             else {
+                  $('[rel="shortcut icon"]').attr('href', "/favicon.ico");
+                 document.title = ' 我们又见面了 ' + OriginTitile;
+                 titleTime = setTimeout(function () {
+                     document.title = OriginTitile;
+                 }, 2000);
+             }
+         })
   </script>
 
 
@@ -1564,6 +1581,21 @@
 
 
   
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
 
   
   

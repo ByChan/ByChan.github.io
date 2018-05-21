@@ -117,7 +117,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="前端工程与性能优化">
 <meta property="og:url" content="http://yoursite.com/2015/05/24/前端工程与性能优化/index.html">
-<meta property="og:site_name" content="陈邦的博客">
+<meta property="og:site_name" content="河森堡的博客 - Hesenberg Blog">
 <meta property="og:description" content="前端工程与性能优化每个参与过开发企业级web应用的前端工程师或许都曾思考过前端性能优化方面的问题。我们有雅虎14条性能优化原则，还有两本很经典的性能优化指导书：《高性能网站建设指南》、《高性能网站建设进阶指南》。经验丰富的工程师对于前端性能优化方法耳濡目染，基本都能一一列举出来。这些性能优化原则大概是在7年前提出的，对于web性能优化至今都有非常重要的指导意义。  然而，对于构建大型web应用的团">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://raw.githubusercontent.com/fouber/blog/master/assets/book.jpg">
@@ -167,7 +167,7 @@
 
 
 
-  <title>前端工程与性能优化 | 陈邦的博客</title>
+  <title>前端工程与性能优化 | 河森堡的博客 - Hesenberg Blog</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -231,12 +231,12 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">陈邦的博客</span>
+        <span class="site-title">河森堡的博客 - Hesenberg Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
       
-        <p class="site-subtitle"></p>
+        <h1 class="site-subtitle" itemprop="description">Chen Bang</h1>
       
   </div>
 
@@ -361,13 +361,13 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/05/24/前端工程与性能优化/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ByChan">
-      <meta itemprop="description" content="">
+      <meta itemprop="name" content="陈邦">
+      <meta itemprop="description" content="以铜为镜，可以正衣冠；以史为镜，可以知兴替；以人为镜，可以明得失">
       <meta itemprop="image" content="/images/info.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="陈邦的博客">
+      <meta itemprop="name" content="河森堡的博客 - Hesenberg Blog">
     </span>
 
     
@@ -375,7 +375,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">前端工程与性能优化</h1>
+          <h2 class="post-title" itemprop="name headline">前端工程与性能优化</h2>
         
 
         <div class="post-meta">
@@ -794,13 +794,13 @@
     <div id="QR" style="display: none;">
       
         <div id="wechat" style="display: inline-block">
-          <img id="wechat_qr" src="/images/wechatpay.png" alt="ByChan WeChat Pay"/>
+          <img id="wechat_qr" src="/images/wechatpay.png" alt="陈邦 WeChat Pay"/>
           <p>微信打赏</p>
         </div>
       
       
         <div id="alipay" style="display: inline-block">
-          <img id="alipay_qr" src="/images/alipay.png" alt="ByChan Alipay"/>
+          <img id="alipay_qr" src="/images/alipay.png" alt="陈邦 Alipay"/>
           <p>支付宝打赏</p>
         </div>
       
@@ -933,11 +933,11 @@
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/info.png"
-               alt="ByChan" />
-          <p class="site-author-name" itemprop="name">ByChan</p>
+               alt="陈邦" />
+          <p class="site-author-name" itemprop="name">陈邦</p>
            
               <p class="site-description motion-element" itemprop="description">以铜为镜，可以正衣冠；以史为镜，可以知兴替；以人为镜，可以明得失</p>
-          
+           
         </div>
         <nav class="site-state motion-element">
 
@@ -1057,7 +1057,7 @@
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">ByChan</span>
+  <span class="author" itemprop="copyrightHolder">陈邦</span>
 </div>
 
         
@@ -1522,6 +1522,23 @@
         onPopupClose();
       }
     });
+    // 页面崩溃效果
+         var OriginTitile = document.title;
+         var titleTime;
+         document.addEventListener('visibilitychange', function () {
+             if (document.hidden) {
+                 $('[rel="shortcut icon"]').attr('href', "/favicon-error.ico");
+                 document.title = ' 页面崩溃啦  | 快回来！';
+                 clearTimeout(titleTime);
+             }
+             else {
+                  $('[rel="shortcut icon"]').attr('href', "/favicon.ico");
+                 document.title = ' 我们又见面了 ' + OriginTitile;
+                 titleTime = setTimeout(function () {
+                     document.title = OriginTitile;
+                 }, 2000);
+             }
+         })
   </script>
 
 
@@ -1638,6 +1655,21 @@
 
 
   
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
 
   
   
