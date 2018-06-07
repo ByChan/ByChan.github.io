@@ -115,7 +115,7 @@
 <meta name="description" content="河森堡，河森堡的博客，河森堡博客，Hesenberg，陈邦，陈邦博客，陈邦的博客，hesenberg，Bychan，bychan博客，bychan的博客，hesenberg博客，hesenberg的博客">
 <meta property="og:type" content="website">
 <meta property="og:title" content="河森堡的博客 - Hesenberg Blog">
-<meta property="og:url" content="http://yoursite.com/page/2/index.html">
+<meta property="og:url" content="https://yoursite.com/page/2/index.html">
 <meta property="og:site_name" content="河森堡的博客 - Hesenberg Blog">
 <meta property="og:description" content="河森堡，河森堡的博客，河森堡博客，Hesenberg，陈邦，陈邦博客，陈邦的博客，hesenberg，Bychan，bychan博客，bychan的博客，hesenberg博客，hesenberg的博客">
 <meta property="og:locale" content="zh-Hans">
@@ -149,7 +149,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/page/2/"/>
+  <link rel="canonical" href="https://yoursite.com/page/2/"/>
 
 
 
@@ -174,16 +174,6 @@
   ga('send', 'pageview');
 </script>
 
-
-  <script type="text/javascript">
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?791cde2907f9b0c0fc2ca67cad925724";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script>
 
 
 
@@ -347,7 +337,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/06/28/前端工程——基础篇/">
+    <link itemprop="mainEntityOfPage" href="https://yoursite.com/2015/06/28/前端工程——基础篇/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="陈邦">
@@ -502,7 +492,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/05/24/前端工程与性能优化/">
+    <link itemprop="mainEntityOfPage" href="https://yoursite.com/2015/05/24/前端工程与性能优化/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="陈邦">
@@ -653,7 +643,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/04/18/前端工程与模块化框架/">
+    <link itemprop="mainEntityOfPage" href="https://yoursite.com/2015/04/18/前端工程与模块化框架/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="陈邦">
@@ -804,7 +794,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/03/30/大公司里怎样开发和部署前端代码？/">
+    <link itemprop="mainEntityOfPage" href="https://yoursite.com/2015/03/30/大公司里怎样开发和部署前端代码？/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="陈邦">
@@ -1099,7 +1089,7 @@
   <span class="author" itemprop="copyrightHolder">陈邦</span>
 </div>
 
-<div class="coding"><p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p></div>
+<div class="coding"></div>
 
         
 <div class="busuanzi-count">
@@ -1130,6 +1120,46 @@
   if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
     window.Promise = null;
   }
+
+  (function(){
+            var req = GetXmlHttpObject()
+            if (req == null) {
+              console.log("not support AJAX!");
+              return;
+            }
+            let coding =  document.getElementsByClassName('coding')[0]
+            req.onreadystatechange = function() {
+              if (req.readyState === 4 && req.status === 200) {
+                var deploy_server = req.getResponseHeader("Server");
+                if(deploy_server === 'Coding Pages'){
+                  coding.innerHTML+='<p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p>'
+                  setTimeout(function () {
+                    coding.style.display = 'none'
+                  },500000)
+                }
+                else{
+                    coding.style.display = 'none'
+                }
+              }
+            };
+            req.open('GET', document.location, true);
+            req.send(null);
+          })();
+        function GetXmlHttpObject() {
+          var xmlHttp = null;
+          try {
+            // Firefox, Opera 8.0+, Safari
+            xmlHttp = new XMLHttpRequest();
+          } catch (e) {
+            // Internet Explorer
+            try {
+              xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
+            } catch (e) {
+              xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+          }
+          return xmlHttp;
+        }
 </script>
 
 

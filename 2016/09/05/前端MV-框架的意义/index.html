@@ -116,7 +116,7 @@
 <meta name="keywords" content="Javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="前端MV*框架的意义">
-<meta property="og:url" content="http://yoursite.com/2016/09/05/前端MV-框架的意义/index.html">
+<meta property="og:url" content="https://yoursite.com/2016/09/05/前端MV-框架的意义/index.html">
 <meta property="og:site_name" content="河森堡的博客 - Hesenberg Blog">
 <meta property="og:description" content="经常有人质疑，在前端搞MV有什么意义？也有人提出这样的疑问：以AngularJS，Knockout，BackBone为代表的MV框架，它跟jQuery这样的框架有什么区别？我jQuery用得好好的，有什么必要再引入这种框架？ 回答这些问题之前，先要理清一些历史，前端从什么时候开始有框架的？ 早期前端都是比较简单，基本以页面为工作单元，内容以浏览型为主，也偶尔有简单的表单操作，这个时期每个界面上只有">
 <meta property="og:locale" content="zh-Hans">
@@ -151,7 +151,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/09/05/前端MV-框架的意义/"/>
+  <link rel="canonical" href="https://yoursite.com/2016/09/05/前端MV-框架的意义/"/>
 
 
 
@@ -176,16 +176,6 @@
   ga('send', 'pageview');
 </script>
 
-
-  <script type="text/javascript">
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?791cde2907f9b0c0fc2ca67cad925724";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script>
 
 
 
@@ -348,7 +338,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/09/05/前端MV-框架的意义/">
+    <link itemprop="mainEntityOfPage" href="https://yoursite.com/2016/09/05/前端MV-框架的意义/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="陈邦">
@@ -732,7 +722,7 @@
   <span class="author" itemprop="copyrightHolder">陈邦</span>
 </div>
 
-<div class="coding"><p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p></div>
+<div class="coding"></div>
 
         
 <div class="busuanzi-count">
@@ -763,6 +753,46 @@
   if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
     window.Promise = null;
   }
+
+  (function(){
+            var req = GetXmlHttpObject()
+            if (req == null) {
+              console.log("not support AJAX!");
+              return;
+            }
+            let coding =  document.getElementsByClassName('coding')[0]
+            req.onreadystatechange = function() {
+              if (req.readyState === 4 && req.status === 200) {
+                var deploy_server = req.getResponseHeader("Server");
+                if(deploy_server === 'Coding Pages'){
+                  coding.innerHTML+='<p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p>'
+                  setTimeout(function () {
+                    coding.style.display = 'none'
+                  },500000)
+                }
+                else{
+                    coding.style.display = 'none'
+                }
+              }
+            };
+            req.open('GET', document.location, true);
+            req.send(null);
+          })();
+        function GetXmlHttpObject() {
+          var xmlHttp = null;
+          try {
+            // Firefox, Opera 8.0+, Safari
+            xmlHttp = new XMLHttpRequest();
+          } catch (e) {
+            // Internet Explorer
+            try {
+              xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
+            } catch (e) {
+              xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+          }
+          return xmlHttp;
+        }
 </script>
 
 

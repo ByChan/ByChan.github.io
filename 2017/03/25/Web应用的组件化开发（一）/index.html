@@ -116,7 +116,7 @@
 <meta name="keywords" content="Javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Web应用的组件化开发（一）">
-<meta property="og:url" content="http://yoursite.com/2017/03/25/Web应用的组件化开发（一）/index.html">
+<meta property="og:url" content="https://yoursite.com/2017/03/25/Web应用的组件化开发（一）/index.html">
 <meta property="og:site_name" content="河森堡的博客 - Hesenberg Blog">
 <meta property="og:description" content="基本思路1. 为什么要做组件化？无论前端也好，后端也好，都是整个软件体系的一部分。软件产品也是产品，它的研发过程也必然是有其目的。绝大多数软件产品是追逐利润的，在产品目标确定的情况下，成本有两个途径来优化：减少部署成本，提高开发效率。 减少部署成本的方面，业界研究得非常多，比如近几年很流行的“去IOE”，就是很典型的，从一些费用较高的高性能产品迁移到开源的易替换的产品集群，又比如使用Linux +">
 <meta property="og:locale" content="zh-Hans">
@@ -158,7 +158,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/03/25/Web应用的组件化开发（一）/"/>
+  <link rel="canonical" href="https://yoursite.com/2017/03/25/Web应用的组件化开发（一）/"/>
 
 
 
@@ -183,16 +183,6 @@
   ga('send', 'pageview');
 </script>
 
-
-  <script type="text/javascript">
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?791cde2907f9b0c0fc2ca67cad925724";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script>
 
 
 
@@ -355,7 +345,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/25/Web应用的组件化开发（一）/">
+    <link itemprop="mainEntityOfPage" href="https://yoursite.com/2017/03/25/Web应用的组件化开发（一）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="陈邦">
@@ -800,7 +790,7 @@
   <span class="author" itemprop="copyrightHolder">陈邦</span>
 </div>
 
-<div class="coding"><p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p></div>
+<div class="coding"></div>
 
         
 <div class="busuanzi-count">
@@ -831,6 +821,46 @@
   if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
     window.Promise = null;
   }
+
+  (function(){
+            var req = GetXmlHttpObject()
+            if (req == null) {
+              console.log("not support AJAX!");
+              return;
+            }
+            let coding =  document.getElementsByClassName('coding')[0]
+            req.onreadystatechange = function() {
+              if (req.readyState === 4 && req.status === 200) {
+                var deploy_server = req.getResponseHeader("Server");
+                if(deploy_server === 'Coding Pages'){
+                  coding.innerHTML+='<p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p>'
+                  setTimeout(function () {
+                    coding.style.display = 'none'
+                  },500000)
+                }
+                else{
+                    coding.style.display = 'none'
+                }
+              }
+            };
+            req.open('GET', document.location, true);
+            req.send(null);
+          })();
+        function GetXmlHttpObject() {
+          var xmlHttp = null;
+          try {
+            // Firefox, Opera 8.0+, Safari
+            xmlHttp = new XMLHttpRequest();
+          } catch (e) {
+            // Internet Explorer
+            try {
+              xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
+            } catch (e) {
+              xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+          }
+          return xmlHttp;
+        }
 </script>
 
 

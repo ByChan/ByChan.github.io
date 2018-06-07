@@ -116,7 +116,7 @@
 <meta name="keywords" content="Javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="从HTML Components的衰落看Web Components的危机">
-<meta property="og:url" content="http://yoursite.com/2016/11/15/从HTML Components的衰落看Web Components的危机/index.html">
+<meta property="og:url" content="https://yoursite.com/2016/11/15/从HTML Components的衰落看Web Components的危机/index.html">
 <meta property="og:site_name" content="河森堡的博客 - Hesenberg Blog">
 <meta property="og:description" content="搞前端时间比较长的同学都会知道一个东西，那就是HTC（HTML Components），这个东西名字很现在流行的Web Components很像，但却是不同的两个东西，它们的思路有很多相似点，但是前者已是昨日黄花，后者方兴未艾，是什么造成了它们的这种差距呢？ HTML Components的一些特性因为主流浏览器里面只有IE支持过HTC，所以很多人潜意识都认为它不标准，但其实它也是有标准文档的，而">
 <meta property="og:locale" content="zh-Hans">
@@ -151,7 +151,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/11/15/从HTML Components的衰落看Web Components的危机/"/>
+  <link rel="canonical" href="https://yoursite.com/2016/11/15/从HTML Components的衰落看Web Components的危机/"/>
 
 
 
@@ -176,16 +176,6 @@
   ga('send', 'pageview');
 </script>
 
-
-  <script type="text/javascript">
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?791cde2907f9b0c0fc2ca67cad925724";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script>
 
 
 
@@ -348,7 +338,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/11/15/从HTML Components的衰落看Web Components的危机/">
+    <link itemprop="mainEntityOfPage" href="https://yoursite.com/2016/11/15/从HTML Components的衰落看Web Components的危机/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="陈邦">
@@ -791,7 +781,7 @@
   <span class="author" itemprop="copyrightHolder">陈邦</span>
 </div>
 
-<div class="coding"><p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p></div>
+<div class="coding"></div>
 
         
 <div class="busuanzi-count">
@@ -822,6 +812,46 @@
   if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
     window.Promise = null;
   }
+
+  (function(){
+            var req = GetXmlHttpObject()
+            if (req == null) {
+              console.log("not support AJAX!");
+              return;
+            }
+            let coding =  document.getElementsByClassName('coding')[0]
+            req.onreadystatechange = function() {
+              if (req.readyState === 4 && req.status === 200) {
+                var deploy_server = req.getResponseHeader("Server");
+                if(deploy_server === 'Coding Pages'){
+                  coding.innerHTML+='<p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p>'
+                  setTimeout(function () {
+                    coding.style.display = 'none'
+                  },500000)
+                }
+                else{
+                    coding.style.display = 'none'
+                }
+              }
+            };
+            req.open('GET', document.location, true);
+            req.send(null);
+          })();
+        function GetXmlHttpObject() {
+          var xmlHttp = null;
+          try {
+            // Firefox, Opera 8.0+, Safari
+            xmlHttp = new XMLHttpRequest();
+          } catch (e) {
+            // Internet Explorer
+            try {
+              xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
+            } catch (e) {
+              xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+          }
+          return xmlHttp;
+        }
 </script>
 
 

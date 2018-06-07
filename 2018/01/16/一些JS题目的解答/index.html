@@ -116,7 +116,7 @@
 <meta name="keywords" content="Javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="一些JS题目的解答">
-<meta property="og:url" content="http://yoursite.com/2018/01/16/一些JS题目的解答/index.html">
+<meta property="og:url" content="https://yoursite.com/2018/01/16/一些JS题目的解答/index.html">
 <meta property="og:site_name" content="河森堡的博客 - Hesenberg Blog">
 <meta property="og:description" content="在这里看到一些测试题，我HTML和CSS比较一般，尝试把里面的JS题目都解答一下： 1.&amp;quot;1&amp;quot; + 2 + &amp;quot;3&amp;quot; + 4  10 1234 37  答案：1234，加法优先级等同，从左往右，数字与字符串相加，数字转换成字符串进行运算，结果等同于：”12”+”3”+4 = “123”+4 = “1234”。">
 <meta property="og:locale" content="zh-Hans">
@@ -151,7 +151,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/01/16/一些JS题目的解答/"/>
+  <link rel="canonical" href="https://yoursite.com/2018/01/16/一些JS题目的解答/"/>
 
 
 
@@ -176,16 +176,6 @@
   ga('send', 'pageview');
 </script>
 
-
-  <script type="text/javascript">
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?791cde2907f9b0c0fc2ca67cad925724";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script>
 
 
 
@@ -348,7 +338,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/16/一些JS题目的解答/">
+    <link itemprop="mainEntityOfPage" href="https://yoursite.com/2018/01/16/一些JS题目的解答/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="陈邦">
@@ -931,7 +921,7 @@ alert(typeof foo.length);
   <span class="author" itemprop="copyrightHolder">陈邦</span>
 </div>
 
-<div class="coding"><p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p></div>
+<div class="coding"></div>
 
         
 <div class="busuanzi-count">
@@ -962,6 +952,46 @@ alert(typeof foo.length);
   if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
     window.Promise = null;
   }
+
+  (function(){
+            var req = GetXmlHttpObject()
+            if (req == null) {
+              console.log("not support AJAX!");
+              return;
+            }
+            let coding =  document.getElementsByClassName('coding')[0]
+            req.onreadystatechange = function() {
+              if (req.readyState === 4 && req.status === 200) {
+                var deploy_server = req.getResponseHeader("Server");
+                if(deploy_server === 'Coding Pages'){
+                  coding.innerHTML+='<p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p>'
+                  setTimeout(function () {
+                    coding.style.display = 'none'
+                  },500000)
+                }
+                else{
+                    coding.style.display = 'none'
+                }
+              }
+            };
+            req.open('GET', document.location, true);
+            req.send(null);
+          })();
+        function GetXmlHttpObject() {
+          var xmlHttp = null;
+          try {
+            // Firefox, Opera 8.0+, Safari
+            xmlHttp = new XMLHttpRequest();
+          } catch (e) {
+            // Internet Explorer
+            try {
+              xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
+            } catch (e) {
+              xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+          }
+          return xmlHttp;
+        }
 </script>
 
 
