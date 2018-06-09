@@ -1,15 +1,19 @@
-<!doctype html>
+<!DOCTYPE html>
 
 
 
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
 
 
 
@@ -18,6 +22,7 @@
 
 <meta http-equiv="Cache-Control" content="no-transform" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
+
 
 
 
@@ -42,58 +47,29 @@
 
 
 
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-    
-      
-    
-
-    
-  
-
-  
-
-  
-    
-      
-    
-
-    
-  
-
-  
-    
-      
-    
-
-    
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
 
 
 
   
 
-<link href="//cdn.bootcss.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
 
 
   <meta name="keywords" content="河森堡,河森堡的博客,河森堡博客,Hesenberg,陈邦,陈邦博客,陈邦的博客,hesenberg,Bychan,bychan博客,bychan的博客,hesenberg博客,hesenberg的博客" />
@@ -105,22 +81,17 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
-
-
-
-
 
 
 <meta name="description" content="河森堡，河森堡的博客，河森堡博客，Hesenberg，陈邦，陈邦博客，陈邦的博客，hesenberg，Bychan，bychan博客，bychan的博客，hesenberg博客，hesenberg的博客">
 <meta property="og:type" content="website">
-<meta property="og:title" content="河森堡的博客 - Hesenberg Blog">
+<meta property="og:title" content="Hesenberg Blog">
 <meta property="og:url" content="https://yoursite.com/tags/Javascript/page/2/index.html">
-<meta property="og:site_name" content="河森堡的博客 - Hesenberg Blog">
+<meta property="og:site_name" content="Hesenberg Blog">
 <meta property="og:description" content="河森堡，河森堡的博客，河森堡博客，Hesenberg，陈邦，陈邦博客，陈邦的博客，hesenberg，Bychan，bychan博客，bychan的博客，hesenberg博客，hesenberg的博客">
 <meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="河森堡的博客 - Hesenberg Blog">
+<meta name="twitter:title" content="Hesenberg Blog">
 <meta name="twitter:description" content="河森堡，河森堡的博客，河森堡博客，Hesenberg，陈邦，陈邦博客，陈邦的博客，hesenberg，Bychan，bychan博客，bychan的博客，hesenberg博客，hesenberg的博客">
 
 
@@ -129,10 +100,12 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
-    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":true,"scrollpercent":true,"onmobile":false},
     fancybox: true,
-    motion: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     duoshuo: {
       userId: '0',
       author: '博主'
@@ -155,11 +128,7 @@
 
 
 
-  <title>标签: Javascript | 河森堡的博客 - Hesenberg Blog</title>
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
-
+  <title>标签: Javascript | Hesenberg Blog</title>
   
 
 
@@ -177,28 +146,17 @@
 
 
 
-  <script type="text/javascript">
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "//tajs.qq.com/stats?sId=65103563";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script>
 
+</head>
 
-
-
-
-
-
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
     
   
 
-  <div class="container sidebar-position-left  ">
+  <div class="container sidebar-position-left ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -209,7 +167,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">河森堡的博客 - Hesenberg Blog</span>
+        <span class="site-title">Hesenberg Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -244,8 +202,18 @@
         </li>
       
         
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
+          <a href="/categories/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
@@ -255,21 +223,11 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
+          <a href="/archives/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            标签
           </a>
         </li>
       
@@ -483,105 +441,114 @@
   </div>
 
   <aside id="sidebar" class="sidebar">
+    
     <div class="sidebar-inner">
 
       
 
       
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/info.png"
-               alt="陈邦" />
-          <p class="site-author-name" itemprop="name">陈邦</p>
-           
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/info.png"
+                alt="陈邦" />
+            
+              <p class="site-author-name" itemprop="name">陈邦</p>
               <p class="site-description motion-element" itemprop="description">以铜为镜，可以正衣冠；以史为镜，可以知兴替；以人为镜，可以明得失</p>
-           
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ByChan" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/chenbangnews" target="_blank" title="微博">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>微博</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://rednaxelafc.github.io" target="_blank" title="作品">
+                      
+                        <i class="fa fa-fw fa-adjust"></i>作品</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:me@hesenberg.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
         </div>
-        <nav class="site-state motion-element">
-
-          
-            <div class="site-state-item site-state-posts">
-              <a href="/archives">
-                <span class="site-state-item-count">14</span>
-                <span class="site-state-item-name">日志</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-categories">
-              <a href="/categories/index.html">
-                <span class="site-state-item-count">4</span>
-                <span class="site-state-item-name">分类</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-tags">
-              <a href="/tags/index.html">
-                <span class="site-state-item-count">1</span>
-                <span class="site-state-item-name">标签</span>
-              </a>
-            </div>
-          
-
-        </nav>
-
-        
-
-        <div class="links-of-author motion-element">
-          
-            
-              <span class="links-of-author-item">
-                <a href="https://github.com/ByChan" target="_blank" title="GitHub">
-                  
-                    <i class="fa fa-fw fa-github"></i>
-                  
-                  GitHub
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://weibo.com/chenbangnews" target="_blank" title="微博">
-                  
-                    <i class="fa fa-fw fa-weibo"></i>
-                  
-                  微博
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://rednaxelafc.github.io" target="_blank" title="作品">
-                  
-                    <i class="fa fa-fw fa-adjust"></i>
-                  
-                  作品
-                </a>
-              </span>
-            
-          
-        </div>
-
-        
-        
-
-        
-        
-
-        
-
-
       </section>
 
       
 
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
       
 
     </div>
@@ -594,14 +561,13 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
-  
-  &copy;  2015 - 
-  <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">陈邦</span>
+
+  
 </div>
 
 <div class="coding"></div>
@@ -616,15 +582,27 @@
 </div>
 
 
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//tajs.qq.com/stats?sId=65103563";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
         
       </div>
     </footer>
 
     
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
+
     
 
   </div>
@@ -635,46 +613,64 @@
   if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
     window.Promise = null;
   }
-
   (function(){
-            var req = GetXmlHttpObject()
-            if (req == null) {
-              console.log("not support AJAX!");
-              return;
-            }
-            let coding =  document.getElementsByClassName('coding')[0]
-            req.onreadystatechange = function() {
-              if (req.readyState === 4 && req.status === 200) {
-                var deploy_server = req.getResponseHeader("Server");
-                if(deploy_server === 'Coding Pages'){
-                  coding.innerHTML+='<p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p>'
-                  setTimeout(function () {
-                    coding.style.display = 'none'
-                  },500000)
-                }
-                else{
-                    coding.style.display = 'none'
-                }
+
+              var OriginTitile = document.title;
+                       var titleTime;
+                       document.addEventListener('visibilitychange', function () {
+                           if (document.hidden) {
+                               // $('[rel="shortcut icon"]').attr('href', "/favicon-error.ico");
+                               document.title = ' 页面崩溃啦  | 快回来！';
+                               clearTimeout(titleTime);
+                           }
+                           else {
+                               // $('[rel="shortcut icon"]').attr('href', "/favicon.ico");
+                               document.title = ' 我们又见面了 ' + OriginTitile;
+                               titleTime = setTimeout(function () {
+                                   document.title = OriginTitile;
+                               }, 2000);
+                           }
+                       })
+
+
+              var req = GetXmlHttpObject()
+              if (req == null) {
+                console.log("not support AJAX!");
+                return;
               }
-            };
-            req.open('GET', document.location, true);
-            req.send(null);
-          })();
-        function GetXmlHttpObject() {
-          var xmlHttp = null;
-          try {
-            // Firefox, Opera 8.0+, Safari
-            xmlHttp = new XMLHttpRequest();
-          } catch (e) {
-            // Internet Explorer
+              let coding =  document.getElementsByClassName('coding')[0]
+              req.onreadystatechange = function() {
+                if (req.readyState === 4 && req.status === 200) {
+                  var deploy_server = req.getResponseHeader("Server");
+                  if(deploy_server === 'Coding Pages'){
+                    coding.innerHTML+='<p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p>'
+                    setTimeout(function () {
+                      coding.style.display = 'none'
+                    },10000)
+                  }
+                  else{
+                      coding.style.display = 'none'
+                  }
+                }
+              };
+              req.open('GET', document.location, true);
+              req.send(null);
+            })();
+          function GetXmlHttpObject() {
+            var xmlHttp = null;
             try {
-              xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
+              // Firefox, Opera 8.0+, Safari
+              xmlHttp = new XMLHttpRequest();
             } catch (e) {
-              xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+              // Internet Explorer
+              try {
+                xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
+              } catch (e) {
+                xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+              }
             }
+            return xmlHttp;
           }
-          return xmlHttp;
-        }
 </script>
 
 
@@ -702,48 +698,71 @@
 
 
   
-  <script type="text/javascript" src="//cdn.bootcss.com/jquery/2.1.3/jquery.min.js"></script>
-
   
-  <script type="text/javascript" src="//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>
-
-  
-  <script type="text/javascript" src="//cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script>
-
-  
-  <script type="text/javascript" src="//cdn.bootcss.com/velocity/1.2.3/velocity.min.js"></script>
-
-  
-  <script type="text/javascript" src="//cdn.bootcss.com/velocity/1.2.3/velocity.ui.min.js"></script>
-
-  
-  <script type="text/javascript" src="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
-
-  
-  <script type="text/javascript" src="/lib/three/three.min.js"></script>
-
-  
-  <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
-
-
-
-  
+    <script type="text/javascript" src="//cdn.bootcss.com/jquery/2.1.3/jquery.min.js"></script>
   
 
   
+  
+    <script type="text/javascript" src="//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.bootcss.com/velocity/1.2.3/velocity.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.bootcss.com/velocity/1.2.3/velocity.ui.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
+  
+
 
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
 
 
 
@@ -773,7 +792,7 @@
 
 
 
-  
+
 
 
 
@@ -790,7 +809,7 @@
     var search_path = "search.xml";
     if (search_path.length === 0) {
       search_path = "search.xml";
-    } else if (search_path.endsWith("json")) {
+    } else if (/json$/i.test(search_path)) {
       isXml = false;
     }
     var path = "/" + search_path;
@@ -1097,23 +1116,6 @@
         onPopupClose();
       }
     });
-    // 页面崩溃效果
-         var OriginTitile = document.title;
-         var titleTime;
-         document.addEventListener('visibilitychange', function () {
-             if (document.hidden) {
-                 $('[rel="shortcut icon"]').attr('href', "/favicon-error.ico");
-                 document.title = ' 页面崩溃啦  | 快回来！';
-                 clearTimeout(titleTime);
-             }
-             else {
-                  $('[rel="shortcut icon"]').attr('href', "/favicon.ico");
-                 document.title = ' 我们又见面了 ' + OriginTitile;
-                 titleTime = setTimeout(function () {
-                     document.title = OriginTitile;
-                 }, 2000);
-             }
-         })
   </script>
 
 
@@ -1123,7 +1125,7 @@
   
 
   
-  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
   <script>AV.initialize("P1oR5aVDyMG4hiQTC3bpvlRj-gzGzoHsz", "YwcUsp1lv0PutGHkEGS0V7WB");</script>
   <script>
     function showTime(Counter) {
@@ -1230,6 +1232,8 @@
 
 
   
+
+  
 <script>
 (function(){
     var bp = document.createElement('script');
@@ -1245,6 +1249,9 @@
 })();
 </script>
 
+
+  
+  
 
   
   
@@ -1266,7 +1273,7 @@
         }
       });
     </script>
-    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
 
